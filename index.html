@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Hut — Boutique Hotel & Rooftop Restaurant, Kigali</title>
+<meta name="description" content="A boutique hotel & rooftop restaurant in Kimihurura, Kigali — moments from the Kigali Convention Center. Crafted rooms, panoramic views, and Rwandan hospitality.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Utility bar -->
+<div class="utility">
+  <div class="container">
+    <div>KG 646 St, Kimihurura, Kigali <span class="sep">•</span> Open daily, 24 hours</div>
+    <div>
+      <a href="tel:+250792409006">+250 792 409 006</a>
+      <span class="sep">|</span>
+      <a href="mailto:reservation@thehuthotelrwanda.com">reservation@thehuthotelrwanda.com</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      The Hut
+      <small>Boutique Hotel · Kigali</small>
+    </a>
+    <nav class="nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="rooms.html">Rooms</a>
+      <a href="dining.html">Dining</a>
+      <a href="experiences.html">Experiences</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="#book" class="btn btn--gold book-cta">Reserve <span class="arrow">→</span></a>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero__bg" style="background-image:url('https://thehuthotelrwanda.com/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-03-at-09.39.47.jpeg');"></div>
+  <div class="container">
+    <span class="eyebrow">Kimihurura · Kigali, Rwanda</span>
+    <h1>A quiet luxury in the city of a thousand hills.</h1>
+    <p class="hero__lead">A boutique stay moments from the Kigali Convention Center — where rooftop horizons, crafted rooms, and warm Rwandan hospitality meet.</p>
+    <div class="hero__ctas">
+      <a href="#book" class="btn">Book your stay <span class="arrow">→</span></a>
+      <a href="experiences.html" class="btn btn--light">Explore the hotel</a>
+    </div>
+  </div>
+</section>
+
+<!-- Booking widget -->
+<form id="book" class="booking" onsubmit="event.preventDefault(); alert('Redirecting to reservation portal…');">
+  <div class="booking__field">
+    <label>Check in</label>
+    <input type="date" value="2026-05-15">
+  </div>
+  <div class="booking__field">
+    <label>Check out</label>
+    <input type="date" value="2026-05-18">
+  </div>
+  <div class="booking__field">
+    <label>Guests</label>
+    <select>
+      <option>2 Adults</option>
+      <option>1 Adult</option>
+      <option>2 Adults, 1 Child</option>
+      <option>2 Adults, 2 Children</option>
+    </select>
+  </div>
+  <div class="booking__field">
+    <label>Room</label>
+    <select>
+      <option>Any room</option>
+      <option>Junior Suite</option>
+      <option>Premier Room</option>
+      <option>Standard Room</option>
+    </select>
+  </div>
+  <button class="btn btn--gold" type="submit">Check availability</button>
+</form>
+
+<!-- Intro -->
+<section class="intro">
+  <div class="container intro__grid">
+    <div class="intro__media" style="background-image:url('https://thehuthotelrwanda.com/wp-content/uploads/2025/10/01.jpeg');"></div>
+    <div>
+      <span class="eyebrow">Our story</span>
+      <h2>It's not just where you sleep — it's how you feel while you're here.</h2>
+      <p>Since 2016, The Hut has welcomed guests into a thoughtfully designed boutique home in Kimihurura — a serene neighbourhood tucked behind the Kigali Convention Center. Our promise is the quiet luxury of a place that knows you, with the warmth of a Rwandan welcome.</p>
+      <p>From the panoramic terrace of our rooftop restaurant to the calm of the Ingoro pool lounge, every corner is shaped to soothe and to surprise.</p>
+      <blockquote class="intro__quote">"A stay with us is more than a break — it's a carefully crafted experience where every detail is designed to soothe your soul and elevate your journey."</blockquote>
+      <div class="intro__author">Mr. Thomas Antony — Chairman</div>
+    </div>
+  </div>
+</section>
+
+<!-- Rooms -->
+<section class="rooms">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">The Accommodation</span>
+      <h2>Twenty-six rooms. One quiet philosophy.</h2>
+      <p>Designed around restful sleep, soft light, and the long view across Kigali's valleys.</p>
+    </div>
+
+    <div class="rooms__grid">
+      <article class="room-card">
+        <div class="room-card__img" data-count="2 rooms · suite" style="background-image:url('https://thehuthotelrwanda.com/wp-content/uploads/2026/04/Untitled-design-25.png');"></div>
+        <div class="room-card__body">
+          <div class="room-card__meta"><span>2 Guests</span><span>Queen bed</span><span>Balcony</span></div>
+          <h3>The Junior Suite</h3>
+          <p>Our most intimate stay — a queen-sized retreat with two private balconies overlooking the Kigali Convention Center and the valley beyond.</p>
+          <div class="room-card__foot">
+            <div class="room-card__price">$280<small>per night, incl. breakfast</small></div>
+            <a href="room-junior-suite.html" class="room-card__link">View →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="room-card">
+        <div class="room-card__img" data-count="16 rooms · premier" style="background-image:url('https://thehuthotelrwanda.com/wp-content/uploads/2026/05/Untitled-design-32.png');"></div>
+        <div class="room-card__body">
+          <div class="room-card__meta"><span>2 Guests</span><span>King / Twin</span><span>Valley view</span></div>
+          <h3>The Premier Room</h3>
+          <p>Spacious, light-filled rooms with king or twin configurations and interconnecting options — perfect for travellers and families alike.</p>
+          <div class="room-card__foot">
+            <div class="room-card__price">$210<small>per night, incl. breakfast</small></div>
+            <a href="room-premier.html" class="room-card__link">View →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="room-card">
+        <div class="room-card__img" data-count="8 rooms · standard" style="background-image:url('https://thehuthotelrwanda.com/wp-content/uploads/2026/04/Untitled-design-19.png');"></div>
+        <div class="room-card__body">
+          <div class="room-card__meta"><span>2 Guests</span><span>Queen bed</span><span>City view</span></div>
+          <h3>The Standard Room</h3>
+          <p>An understated, restful base for your Kigali stay — comfortable bedding, a modern bath, and captivating views of the city.</p>
+          <div class="room-card__foot">
+            <div class="room-card__price">$160<small>per night, incl. breakfast</small></div>
+            <a href="room-standard.html" class="room-card__link">View →</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="center mt-lg">
+      <a href="rooms.html" class="btn btn--ghost">All rooms & suites <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- Experiences -->
+<section class="experiences">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Experiences</span>
+      <h2>From rooftop sunsets to pool-side afternoons.</h2>
+      <p>Seven on-site experiences, each thought through with the same care as our rooms.</p>
+    </div>
+
+    <div class="exp__grid">
+      <a href="dining.html" class="exp-tile exp-tile--lg" style="background-image:url('https://thehuthotelrwanda.com/wp-content/uploads/2026/04/DSC00540-scaled.jpg');">
+        <div class="exp-tile__body">
+          <h3>The Rooftop</h3>
+          <p>Panoramic views over Kigali, paired with a menu that draws on Rwandan ingredients and international classics.</p>
+          <span>Reserve a table →</span>
+        </div>
+      </a>
+
+      <div style="grid-column: span 5; display: grid; grid-template-rows: 1fr 1fr; gap: 24px;">
+        <a href="experiences.html" class="exp-tile exp-tile--sm" style="background-image:url('https://thehuthotelrwanda.com/wp-content/uploads/2026/05/Untitled-design-34.png');">
+          <div class="exp-tile__body">
+            <h3>Ingoro Pool Lounge</h3>
+            <p>A quiet pool, a long afternoon, a cold drink.</p>
+            <span>Explore →</span>
+          </div>
+        </a>
+        <a href="experiences.html" class="exp-tile exp-tile--sm" style="background-image:url('https://thehuthotelrwanda.com/wp-content/uploads/2026/04/Untitled-design-18.png');">
+          <div class="exp-tile__body">
+            <h3>Wellness & Spa</h3>
+            <p>Gym, sauna, salon and signature treatments.</p>
+            <span>Explore →</span>
+          </div>
+        </a>
+      </div>
+
+      <a href="experiences.html" class="exp-tile exp-tile--row" style="background-image:url('https://thehuthotelrwanda.com/wp-content/uploads/2026/04/Untitled-design-19.png');">
+        <div class="exp-tile__body">
+          <h3>The Bakery</h3>
+          <p>Artisanal pastries, breads and desserts, made fresh daily.</p>
+          <span>Visit →</span>
+        </div>
+      </a>
+      <a href="experiences.html" class="exp-tile exp-tile--row" style="background-image:url('https://thehuthotelrwanda.com/wp-content/uploads/2026/04/Untitled-design-20.png');">
+        <div class="exp-tile__body">
+          <h3>Conference Room</h3>
+          <p>Modern meeting space with high-speed fibre and AV.</p>
+          <span>Plan an event →</span>
+        </div>
+      </a>
+      <a href="experiences.html" class="exp-tile exp-tile--row" style="background-image:url('https://thehuthotelrwanda.com/wp-content/uploads/2026/04/Untitled-design-21.png');">
+        <div class="exp-tile__body">
+          <h3>Craft Shop</h3>
+          <p>Handcrafted Rwandan art, jewellery, and keepsakes.</p>
+          <span>Browse →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Why -->
+<section class="why">
+  <div class="container">
+    <div class="why__grid">
+      <div>
+        <span class="eyebrow">The Hut Difference</span>
+        <h2>The quiet things, done well.</h2>
+        <p>We've grown a reputation for the details others overlook: how the morning light falls across the room, how the coffee is brewed, how a familiar face remembers your name on the second visit.</p>
+        <ul class="why__list">
+          <li><span class="num">01</span><div><strong>A walk from the Convention Center</strong><span>Behind the KCC, on a quiet residential street.</span></div></li>
+          <li><span class="num">02</span><div><strong>Three room categories, one standard</strong><span>From Standard to Junior Suite, the care is the same.</span></div></li>
+          <li><span class="num">03</span><div><strong>Rooftop restaurant with a city view</strong><span>An evening's worth of horizon, on every plate.</span></div></li>
+          <li><span class="num">04</span><div><strong>Built for business and leisure alike</strong><span>Fibre internet, conference space, and a pool to unwind in.</span></div></li>
+        </ul>
+      </div>
+      <div class="why__media" style="background-image:url('https://thehuthotelrwanda.com/wp-content/uploads/2025/03/super-market-scaled.jpg');"></div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="num">4.4</div><div class="label">Google Rating</div></div>
+      <div class="stat"><div class="num">1,346</div><div class="label">Guest Reviews</div></div>
+      <div class="stat"><div class="num">26</div><div class="label">Rooms & Suites</div></div>
+      <div class="stat"><div class="num">2016</div><div class="label">Welcoming since</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+  <div class="container">
+    <span class="eyebrow">Guest stories</span>
+    <h2>What our guests remember.</h2>
+    <blockquote class="testimonial-quote">"One of the most delightful and delicious dining experiences I have had in Kigali. The food was fresh, the view paired beautifully — and Patrick took fifteen minutes to walk us through the menu, with patience and a smile."</blockquote>
+    <div class="testimonial-author">— Shammah K., Google Review</div>
+    <div class="review-stats">
+      <span class="score">★ 4.4</span>
+      <span class="meta">Based on 1,346 Google reviews</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-strip">
+  <div class="container">
+    <span class="eyebrow" style="color:var(--gold);">Ready when you are</span>
+    <h2>Your room is waiting.</h2>
+    <p>Reserve directly with us for our best available rate, complimentary breakfast, and the small extras only we can offer.</p>
+    <a href="#book" class="btn btn--gold">Reserve your stay <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand">The Hut</div>
+        <p>A brand-new boutique hotel in the land of a thousand hills — set in a quiet, serene neighbourhood that offers a relaxing escape from the city's pace.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="Twitter">TW</a>
+          <a href="#" aria-label="YouTube">YT</a>
+        </div>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rooms.html">Rooms</a></li>
+          <li><a href="dining.html">Dining</a></li>
+          <li><a href="experiences.html">Experiences</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Stay</h4>
+        <ul>
+          <li><a href="room-junior-suite.html">Junior Suite</a></li>
+          <li><a href="room-premier.html">Premier Room</a></li>
+          <li><a href="room-standard.html">Standard Room</a></li>
+          <li><a href="#book">Book direct</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <ul>
+          <li>KG 646 St, Rugando, Kimihurura</li>
+          <li>(behind Kigali Convention Center)</li>
+          <li>Kigali, Rwanda</li>
+          <li style="margin-top:14px;"><a href="tel:+250792409006">+250 792 409 006</a></li>
+          <li><a href="mailto:reservation@thehuthotelrwanda.com">reservation@thehuthotelrwanda.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div>© 2026 The Hut Boutique Hotel · Kigali</div>
+      <div>Designed with care · <a href="#">Privacy</a> · <a href="#">Terms</a></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
