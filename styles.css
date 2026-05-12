@@ -49,10 +49,10 @@ h1,h2,h3,h4{
   line-height: 1.15;
   margin: 0 0 .6em;
 }
-h1{ font-size: clamp(2.6rem, 6vw, 5.2rem); }
-h2{ font-size: clamp(2rem, 4vw, 3.4rem); }
-h3{ font-size: clamp(1.4rem, 2.4vw, 1.9rem); }
-h4{ font-size: 1.15rem; letter-spacing: .02em; }
+h1{ font-size: clamp(2rem, 3.4vw, 3.2rem); }
+h2{ font-size: clamp(1.7rem, 2.6vw, 2.4rem); }
+h3{ font-size: clamp(1.25rem, 1.8vw, 1.55rem); }
+h4{ font-size: 1.05rem; letter-spacing: .02em; }
 
 p{ margin: 0 0 1em; color: var(--ink-soft); }
 
@@ -148,6 +148,35 @@ section{ padding: 120px 0; }
   font-size: 1.6rem;
   letter-spacing: .01em;
   line-height: 1;
+  display: inline-flex;
+  align-items: center;
+}
+.brand img{
+  height: 56px;
+  width: auto;
+  display: block;
+  max-width: 100%;
+}
+.brand-text{
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  letter-spacing: .01em;
+  line-height: 1;
+  display: inline-block;
+}
+.brand-text small{
+  display: block;
+  font-family: var(--sans);
+  font-size: .58rem;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 4px;
+  white-space: nowrap;
+}
+@media (max-width: 768px){
+  .brand-text{ font-size: 1.3rem; }
+  .brand-text small{ font-size: .52rem; letter-spacing: .25em; }
 }
 .brand small{
   display: block;
@@ -157,6 +186,10 @@ section{ padding: 120px 0; }
   text-transform: uppercase;
   color: var(--muted);
   margin-top: 4px;
+  white-space: nowrap;
+}
+@media (max-width: 768px){
+  .brand img{ height: 42px; }
 }
 .nav{
   display: flex;
@@ -191,10 +224,12 @@ section{ padding: 120px 0; }
 /* ---------- Hero ---------- */
 .hero{
   position: relative;
-  height: 92vh;
-  min-height: 620px;
+  height: 78vh;
+  min-height: 520px;
+  max-height: 760px;
   color: #fff;
   overflow: hidden;
+  margin-bottom: 0;
 }
 .hero__bg{
   position: absolute; inset: 0;
@@ -215,15 +250,17 @@ section{ padding: 120px 0; }
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  padding-bottom: 80px;
+  justify-content: center;
+  padding-top: 80px;
+  padding-bottom: 160px;
 }
 .hero .eyebrow{ color: var(--gold); }
 .hero .eyebrow::before{ background: var(--gold); }
 .hero h1{
-  max-width: 16ch;
+  max-width: 14ch;
   color: #fff;
   margin-bottom: .3em;
+  font-size: clamp(2rem, 3.2vw, 3rem);
 }
 .hero__lead{
   max-width: 52ch;
@@ -236,15 +273,16 @@ section{ padding: 120px 0; }
 /* Booking widget */
 .booking{
   position: relative;
-  margin: -64px auto 0;
+  margin: -80px auto 80px;
   background: #fff;
   box-shadow: var(--shadow-md);
   max-width: 1180px;
-  padding: 28px 36px;
+  padding: 36px 44px;
   display: grid;
   grid-template-columns: repeat(4, 1fr) auto;
-  gap: 20px;
+  gap: 28px;
   z-index: 5;
+  border-top: 3px solid var(--accent);
 }
 .booking__field label{
   display: block;
@@ -590,7 +628,8 @@ section{ padding: 120px 0; }
   margin-bottom: 20px;
 }
 .site-footer ul{ list-style: none; padding: 0; margin: 0; }
-.site-footer li{ margin-bottom: 10px; }
+.site-footer li{ margin-bottom: 10px; word-wrap: break-word; overflow-wrap: break-word; }
+.site-footer a{ word-wrap: break-word; overflow-wrap: anywhere; }
 .site-footer a:hover{ color: var(--gold); }
 .footer__brand{
   font-family: var(--serif);
@@ -671,15 +710,17 @@ section{ padding: 120px 0; }
 .room-detail__hero{
   display: grid;
   grid-template-columns: 7fr 5fr;
-  gap: 0;
+  gap: 12px;
+  max-height: 620px;
 }
 .room-detail__hero .img{
   aspect-ratio: 4/3;
   background-size: cover;
   background-position: center;
+  max-height: 620px;
 }
-.room-detail__hero .img.small{ aspect-ratio: 1; }
-.room-detail__hero .stack{ display: grid; grid-template-rows: 1fr 1fr; }
+.room-detail__hero .img.small{ aspect-ratio: 1; max-height: 304px; }
+.room-detail__hero .stack{ display: grid; grid-template-rows: 1fr 1fr; gap: 12px; }
 
 .room-features{
   display: grid;
@@ -741,46 +782,4 @@ section{ padding: 120px 0; }
 .contact-form textarea{
   width: 100%;
   border: none;
-  border-bottom: 1px solid var(--line);
-  background: transparent;
-  font-family: var(--serif);
-  font-size: 1.1rem;
-  padding: 8px 0;
-  outline: none;
-  resize: vertical;
-}
-.contact-form input:focus,
-.contact-form textarea:focus{ border-color: var(--accent); }
-
-@media (max-width: 900px){
-  .contact-grid{ grid-template-columns: 1fr; gap: 40px; }
-}
-
-/* ---------- FAQ (collapsibles) ---------- */
-.faq details{
-  border-bottom: 1px solid var(--line);
-  padding: 22px 0;
-}
-.faq summary{
-  font-family: var(--serif);
-  font-size: 1.25rem;
-  cursor: pointer;
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: var(--ink);
-}
-.faq summary::-webkit-details-marker{ display: none; }
-.faq summary::after{
-  content: "+";
-  font-size: 1.4rem;
-  color: var(--accent);
-  transition: transform .25s ease;
-}
-.faq details[open] summary::after{ content: "−"; }
-.faq details[open]{ padding-bottom: 14px; }
-.faq details p{ margin-top: 14px; }
-
-/* ---------- Utility ---------- */
-.center{ text-align: 
+  border-bottom: 1p

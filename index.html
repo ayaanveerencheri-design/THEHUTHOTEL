@@ -28,7 +28,7 @@
 <header class="site-header">
   <div class="container">
     <a href="index.html" class="brand" aria-label="The Hut · Restaurant & Boutique Hotel">
-      <img src="logo.png" alt="The Hut · Restaurant & Boutique Hotel">
+      <img src="logo.png" alt="The Hut · Restaurant & Boutique Hotel" onerror="this.outerHTML='<span class=&quot;brand-text&quot;>The Hut<small>Boutique Hotel · Kigali</small></span>'">
     </a>
     <nav class="nav">
       <a href="index.html" class="active">Home</a>
@@ -56,8 +56,7 @@
 </section>
 
 <!-- Booking widget -->
-<section style="background: var(--bg); padding: 0; position: relative;">
-<form id="book" class="booking" onsubmit="event.preventDefault(); alert('Redirecting to reservation portal…');" style="margin-bottom: 60px;">
+<form id="book" class="booking" onsubmit="event.preventDefault(); alert('Redirecting to reservation portal…');">
   <div class="booking__field">
     <label>Check in</label>
     <input type="date" value="2026-05-15">
@@ -86,7 +85,6 @@
   </div>
   <button class="btn btn--gold" type="submit">Check availability</button>
 </form>
-</section>
 
 <!-- Intro -->
 <section class="intro">
@@ -127,7 +125,7 @@
       </article>
 
       <article class="room-card">
-        <div class="room-card__img" data-count="16 rooms · premier" style="background-image:url('images/premier-02.jpg');"></div>
+        <div class="room-card__img" data-count="16 rooms · premier" style="background-image:url('images/premier-04.jpg');"></div>
         <div class="room-card__body">
           <div class="room-card__meta"><span>2 Guests</span><span>King / Twin</span><span>Valley view</span></div>
           <h3>The Premier Room</h3>
@@ -140,7 +138,7 @@
       </article>
 
       <article class="room-card">
-        <div class="room-card__img" data-count="8 rooms · standard" style="background-image:url('images/standard-01.jpg');"></div>
+        <div class="room-card__img" data-count="8 rooms · standard" style="background-image:url('images/standard-03.jpg');"></div>
         <div class="room-card__body">
           <div class="room-card__meta"><span>2 Guests</span><span>Queen bed</span><span>City view</span></div>
           <h3>The Standard Room</h3>
@@ -322,4 +320,4 @@
 </footer>
 
 </body>
-</html
+</h

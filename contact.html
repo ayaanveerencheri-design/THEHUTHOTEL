@@ -21,7 +21,7 @@
 
 <header class="site-header">
   <div class="container">
-    <a href="index.html" class="brand" aria-label="The Hut · Restaurant & Boutique Hotel"><img src="logo.png" alt="The Hut · Restaurant & Boutique Hotel"></a>
+    <a href="index.html" class="brand" aria-label="The Hut · Restaurant & Boutique Hotel"><img src="logo.png" alt="The Hut · Restaurant & Boutique Hotel" onerror="this.outerHTML='<span class=&quot;brand-text&quot;>The Hut<small>Boutique Hotel · Kigali</small></span>'"></a>
     <nav class="nav">
       <a href="index.html">Home</a>
       <a href="rooms.html">Rooms</a>
@@ -85,12 +85,15 @@
 
 <section style="padding-top:0;">
   <div class="container">
-    <div style="height:420px; background-image:url('https://maps.googleapis.com/maps/api/staticmap?center=-1.9536,30.0904&zoom=15&size=1280x420&maptype=roadmap&markers=color:0x8b6f3f%7C-1.9536,30.0904&style=feature:poi%7Cvisibility:off&key='); background-size:cover; background-position:center; background-color:#e8e3d6; position:relative;">
-      <div style="position:absolute; bottom:24px; right:24px; background:#fff; padding:18px 22px; box-shadow:var(--shadow-md);">
-        <strong style="font-family:var(--serif); font-size:1.2rem;">The Hut Boutique Hotel</strong><br>
-        <span style="font-size:.85rem; color:var(--muted);">KG 646 St, Kimihurura, Kigali</span><br>
-        <a href="https://maps.google.com/?q=The+Hut+Hotel+Kigali" style="font-size:.75rem; letter-spacing:.18em; text-transform:uppercase; color:var(--accent);">Open in Maps →</a>
-      </div>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1991.0!2d30.0904!3d-1.9536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sThe%20Hut%20Boutique%20Hotel%20Kigali!5e0!3m2!1sen!2srw!4v1700000000000"
+      style="width:100%; height:420px; border:0; display:block;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="The Hut Boutique Hotel location on map"></iframe>
+    <div style="text-align:center; margin-top:20px;">
+      <a href="https://maps.google.com/?q=The+Hut+Hotel+Kigali" target="_blank" rel="noopener" class="btn btn--ghost">Open in Google Maps <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -107,4 +110,9 @@
       <div><h4>Stay</h4><ul><li><a href="room-junior-suite.html">Junior Suite</a></li><li><a href="room-premier.html">Premier Room</a></li><li><a href="room-standard.html">Standard Room</a></li><li><a href="index.html#book">Book direct</a></li></ul></div>
       <div><h4>Visit</h4><ul><li>KG 646 St, Rugando, Kimihurura</li><li>(behind Kigali Convention Center)</li><li>Kigali, Rwanda</li><li style="margin-top:14px;"><a href="tel:+250792409006">+250 792 409 006</a></li><li><a href="mailto:reservation@thehuthotelrwanda.com">reservation@thehuthotelrwanda.com</a></li></ul></div>
     </div>
-    <div class="footer__bottom"><div>© 2026 The Hut Boutique Hotel · Kigali</div><div><a href="#">Privacy</a> ·
+    <div class="footer__bottom"><div>© 2026 The Hut Boutique Hotel · Kigali</div><div><a href="#">Privacy</a> · <a href="#">Terms</a></div></div>
+  </div>
+</footer>
+
+</body>
+</
