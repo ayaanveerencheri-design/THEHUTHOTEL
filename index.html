@@ -100,6 +100,18 @@
   }, { threshold: 0.12 });
   els.forEach(function(el){ io.observe(el); });
 })();
+
+// Sticky header — deeper shadow when scrolled
+(function(){
+  var header = document.querySelector('.site-header');
+  if (!header) return;
+  function update(){
+    if (window.scrollY > 30){ header.classList.add('scrolled'); }
+    else { header.classList.remove('scrolled'); }
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+})();
 </script>
 
 <!-- Booking widget -->
@@ -279,7 +291,7 @@
           <li><span class="num">04</span><div><strong>Built for business and leisure alike</strong><span>Fibre internet, conference space, and a pool to unwind in.</span></div></li>
         </ul>
       </div>
-      <div class="why__media" style="background-image:url('images/suite-13.jpg');"></div>
+      <div class="why__media" style="background-image:url('images/premier-04.jpg'); background-position: center center;"></div>
     </div>
 
     <div class="stats">
@@ -350,17 +362,4 @@
           <li>(behind Kigali Convention Center)</li>
           <li>Kigali, Rwanda</li>
           <li style="margin-top:14px;"><a href="tel:+250792409006">+250 792 409 006</a></li>
-          <li><a href="mailto:reservation@thehuthotelrwanda.com">reservation@thehuthotelrwanda.com</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <div>© 2026 The Hut Boutique Hotel · Kigali</div>
-      <div>Designed with care · <a href="#">Privacy</a> · <a href="#">Terms</a></div>
-    </div>
-  </div>
-</footer>
-
-</body>
-</html>
-                                                        
+          <li><a href="mai
