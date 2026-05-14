@@ -328,35 +328,58 @@ section{ padding: 120px 0; }
   background: #fff;
   box-shadow: var(--shadow-md);
   max-width: 1180px;
-  padding: 36px 44px;
+  padding: 40px 44px 36px;
   display: grid;
   grid-template-columns: repeat(4, 1fr) auto;
   gap: 28px;
   z-index: 5;
-  border-top: 3px solid var(--accent);
 }
+.booking::before{
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 80px; height: 3px;
+  background: var(--accent);
+}
+.booking__field{ display: flex; flex-direction: column; }
 .booking__field label{
   display: block;
-  font-size: .75rem;
-  letter-spacing: .22em;
+  font-family: var(--sans);
+  font-size: .7rem;
+  letter-spacing: .25em;
   text-transform: uppercase;
-  color: var(--ink-soft);
-  margin-bottom: 8px;
+  color: var(--muted);
+  margin-bottom: 10px;
   font-weight: 600;
 }
 .booking__field input,
 .booking__field select{
   width: 100%;
   border: none;
-  border-bottom: 2px solid var(--line);
+  border-bottom: 1px solid var(--line);
   background: transparent;
   font-family: var(--serif);
-  font-size: 1.3rem;
+  font-weight: 400;
+  font-size: 1.35rem;
   color: var(--ink);
-  padding: 10px 0;
+  padding: 8px 0;
   outline: none;
   min-height: 44px;
+  letter-spacing: .01em;
+  transition: border-color .25s ease;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: none;
 }
+.booking__field select{
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6' fill='none' stroke='%238b6f3f' stroke-width='1.5'><path d='M1 1l4 4 4-4'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 4px center;
+  padding-right: 24px;
+  cursor: pointer;
+}
+.booking__field input:focus,
+.booking__field select:focus{ border-bottom-color: var(--accent); }
 .booking__field input:focus,
 .booking__field select:focus{ border-color: var(--accent); }
 .booking .btn{ align-self: end; }
@@ -1043,36 +1066,4 @@ section{ padding: 120px 0; }
   .room-detail__hero .stack{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: none;
-    gap: 0;
-  }
-  .room-features{
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    padding: 30px 0;
-    margin: 40px 0;
-  }
-
-  /* FAQ */
-  .faq summary{ font-size: 1.05rem; }
-
-  /* Buttons */
-  .btn{ padding: 14px 24px; font-size: .72rem; }
-}
-
-/* Smaller phones */
-@media (max-width: 420px){
-  .container{ padding: 0 16px; }
-  .utility{ font-size: .62rem; }
-  .booking{ margin: -24px 12px 0; padding: 18px 14px; }
-  .nav{ display: none; }
-  .stats{ grid-template-columns: 1fr; }
-}
-
-/* =========================================================
-   SCROLL-REVEAL ANIMATIONS — gentle fade-up on scroll
-   ========================================================= */
-.reveal{
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 1s ease, transform 1s ease;
+    grid-tem
