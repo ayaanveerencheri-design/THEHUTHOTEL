@@ -276,12 +276,15 @@ section{ padding: 120px 0; }
 }
 .hero__dots{
   position: absolute;
-  bottom: 28px;
+  bottom: 180px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   gap: 10px;
   z-index: 6;
+}
+@media (max-width: 768px){
+  .hero__dots{ bottom: 130px; }
 }
 .hero__dot{
   width: 36px; height: 3px;
@@ -337,13 +340,6 @@ section{ padding: 120px 0; }
   grid-template-columns: repeat(4, 1fr) auto;
   gap: 28px;
   z-index: 5;
-}
-.booking::before{
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 80px; height: 3px;
-  background: var(--accent);
 }
 .booking__field{ display: flex; flex-direction: column; }
 .booking__field label{
@@ -405,7 +401,11 @@ section{ padding: 120px 0; }
   aspect-ratio: 4/5;
   background-size: cover;
   background-position: center;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform .5s ease;
 }
+.intro__media:hover{ transform: scale(1.025); }
 .intro__media::before{
   content: "";
   position: absolute;
@@ -497,7 +497,7 @@ section{ padding: 120px 0; }
   margin-top: auto;
   padding-top: 24px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   border-top: 1px solid var(--line);
 }
@@ -1101,6 +1101,4 @@ section{ padding: 120px 0; }
 
 .contact-form .field{ margin-bottom: 22px; }
 .contact-form label{
-  display: block;
-  font-size: .7rem;
-  letter-sp
+  di
