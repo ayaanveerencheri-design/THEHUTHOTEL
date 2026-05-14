@@ -100,8 +100,13 @@
         io.unobserve(e.target);
       }
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.05, rootMargin: '0px 0px -50px 0px' });
   els.forEach(function(el){ io.observe(el); });
+  // Ensure review cards are always visible (carousel issue)
+  document.querySelectorAll('.review-card').forEach(function(el){
+    el.classList.remove('reveal');
+    el.classList.add('in');
+  });
 })();
 
 // Sticky header — deeper shadow when scrolled
@@ -394,9 +399,4 @@
 
     <div class="reviews">
       <button class="reviews__nav reviews__nav--prev" aria-label="Previous review">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-      </button>
-      <div class="reviews__track">
-        <article class="review-card">
-          <div class="review-card__stars" aria-label="5 stars">★ ★ ★ ★ ★</div>
-          <p c
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyl
