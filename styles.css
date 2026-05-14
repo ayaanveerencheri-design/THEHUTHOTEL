@@ -124,6 +124,9 @@ section{ padding: 120px 0; }
   color: #d8d2c4;
   font-size: .75rem;
   letter-spacing: .08em;
+  position: sticky;
+  top: 0;
+  z-index: 101;
 }
 .utility .container{
   display: flex;
@@ -138,7 +141,7 @@ section{ padding: 120px 0; }
 /* ---------- Header / Nav ---------- */
 .site-header{
   position: sticky;
-  top: 0;
+  top: 38px;
   z-index: 100;
   background: rgba(250,247,242,.96);
   backdrop-filter: blur(14px);
@@ -146,6 +149,9 @@ section{ padding: 120px 0; }
   border-bottom: 1px solid var(--line);
   box-shadow: 0 2px 16px rgba(26,26,26,.05);
   transition: box-shadow .25s ease, background .25s ease;
+}
+@media (max-width: 768px){
+  .site-header{ top: 56px; }
 }
 .site-header.scrolled{
   background: rgba(250,247,242,.99);
@@ -540,10 +546,14 @@ section{ padding: 120px 0; }
   align-items: flex-end;
   padding: 32px;
   cursor: pointer;
-  transition: background-size .7s ease, transform .5s ease;
+  transition: transform .7s ease;
 }
-.exp-tile:hover{ background-size: 110%; }
-.exp-tile__body{ transition: transform .35s ease; }
+.exp-tile:hover{ transform: scale(1.025); }
+.exp-tile__body{
+  transition: transform .35s ease;
+  position: relative;
+  z-index: 2;
+}
 .exp-tile:hover .exp-tile__body{ transform: translateY(-4px); }
 .exp-tile::after{
   content: "";
@@ -1062,8 +1072,4 @@ section{ padding: 120px 0; }
   .contact-info dt{ margin-top: 16px; }
 
   /* Room detail */
-  .room-detail__hero{ grid-template-columns: 1fr; }
-  .room-detail__hero .stack{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-tem
+  .room-detail__hero{ grid-
