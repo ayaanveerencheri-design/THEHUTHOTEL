@@ -382,8 +382,101 @@ section{ padding: 120px 0; }
   letter-spacing: .22em;
 }
 
+/* Mobile menu toggle button (hamburger) */
+.menu-toggle{
+  display: none;
+  background: transparent;
+  border: none;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 110;
+  position: relative;
+}
+.menu-toggle span{
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--ink);
+  margin: 5px auto;
+  transition: transform .3s ease, opacity .3s ease;
+}
+.menu-toggle[aria-expanded="true"] span:nth-child(1){
+  transform: translateY(7px) rotate(45deg);
+}
+.menu-toggle[aria-expanded="true"] span:nth-child(2){
+  opacity: 0;
+}
+.menu-toggle[aria-expanded="true"] span:nth-child(3){
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 @media (max-width: 960px){
-  .nav{ display: none; }
+  .menu-toggle{ display: block; order: 2; }
+  .site-header .container{ gap: 12px; }
+  .brand{ order: 1; flex: 1; }
+  .book-cta{ display: none; }
+
+  .nav{
+    position: fixed;
+    top: 0; right: 0;
+    width: 88%;
+    max-width: 360px;
+    height: 100vh;
+    background: var(--bg);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0;
+    padding: 110px 32px 40px;
+    transform: translateX(100%);
+    transition: transform .35s cubic-bezier(.4,0,.2,1);
+    box-shadow: -8px 0 32px rgba(0,0,0,.12);
+    z-index: 105;
+    display: flex !important;
+  }
+  .nav.is-open{ transform: translateX(0); }
+  .nav a{
+    display: block;
+    width: 100%;
+    padding: 18px 0;
+    font-size: 1.1rem;
+    letter-spacing: .12em;
+    border-bottom: 1px solid var(--line);
+  }
+  .nav a::after{ display: none; }
+  .nav a.active{ color: var(--accent); }
+
+  /* Mobile menu backdrop */
+  .menu-backdrop{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease, visibility .3s ease;
+    z-index: 102;
+  }
+  .menu-backdrop.is-visible{
+    opacity: 1;
+    visibility: visible;
+  }
+  body.menu-open{ overflow: hidden; }
+
+  /* Add a Reserve CTA at the bottom of the mobile menu */
+  .nav__reserve{
+    margin-top: auto;
+    padding-top: 32px;
+    width: 100%;
+  }
+  .nav__reserve .btn{
+    width: 100%;
+    justify-content: center;
+  }
+}
+@media (min-width: 961px){
+  .nav__reserve{ display: none; }
 }
 
 /* ---------- Hero ---------- */
@@ -1417,85 +1510,4 @@ section{ padding: 120px 0; }
   .review-stats{ margin-top: 40px; padding: 12px 20px; }
 
   /* CTA strip */
-  .cta-strip{ padding: 80px 0; }
-  .cta-strip h2{ font-size: clamp(1.6rem, 6vw, 2.2rem); }
-
-  /* Footer — stack everything cleanly */
-  .site-footer{ padding: 60px 0 24px; }
-  .footer__grid{
-    grid-template-columns: 1fr;
-    gap: 36px;
-  }
-  .footer__brand{ font-size: 1.6rem; }
-  .footer__bottom{
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-    margin-top: 40px;
-  }
-  .site-footer h4{ margin-bottom: 14px; }
-
-  /* Page hero (inner pages) */
-  .page-hero{ height: 50vh; min-height: 340px; padding-bottom: 40px; }
-  .page-hero h1{ font-size: clamp(2rem, 8vw, 3rem); }
-
-  /* Contact */
-  .contact-grid{ grid-template-columns: 1fr; gap: 50px; }
-  .contact-info dl{
-    grid-template-columns: 1fr;
-    gap: 6px 0;
-  }
-  .contact-info dt{ margin-top: 16px; }
-
-  /* Room detail */
-  .room-detail__hero{ grid-template-columns: 1fr; }
-  .room-detail__hero .stack{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: none;
-    gap: 0;
-  }
-  .room-features{
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    padding: 30px 0;
-    margin: 40px 0;
-  }
-
-  /* FAQ */
-  .faq summary{ font-size: 1.05rem; }
-
-  /* Buttons */
-  .btn{ padding: 14px 24px; font-size: .72rem; }
-}
-
-/* Smaller phones */
-@media (max-width: 420px){
-  .container{ padding: 0 16px; }
-  .utility{ font-size: .62rem; }
-  .booking{ margin: -24px 12px 0; padding: 18px 14px; }
-  .nav{ display: none; }
-  .stats{ grid-template-columns: 1fr; }
-}
-
-/* =========================================================
-   SCROLL-REVEAL ANIMATIONS — gentle fade-up on scroll
-   ========================================================= */
-.reveal{
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 1s ease, transform 1s ease;
-}
-.reveal.in{
-  opacity: 1;
-  transform: translateY(0);
-}
-@media (prefers-reduced-motion: reduce){
-  .reveal{ opacity: 1; transform: none; transition: none; }
-  .hero__slide{ transition: opacity .3s; transform: none; }
-}
-
-/* Section heads default-reveal */
-section h2, .section-head, .room-card, .exp-tile, .intro__media, .why__media{
-  /* will be enhanced by JS but we leave them visible by default */
-}
+  .c
