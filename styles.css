@@ -309,9 +309,13 @@ section{ padding: 120px 0; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   gap: 24px;
+  min-height: 96px;
+}
+@media (max-width: 768px){
+  .site-header .container{ min-height: 72px; padding-top: 8px; padding-bottom: 8px; }
 }
 .brand{
   font-family: var(--serif);
@@ -322,14 +326,14 @@ section{ padding: 120px 0; }
   align-items: center;
 }
 .brand img{
-  height: 70px;
+  height: 110px;
   width: auto;
   display: block;
-  max-width: 220px;
+  max-width: 320px;
   object-fit: contain;
 }
 @media (max-width: 768px){
-  .brand img{ height: 52px; max-width: 170px; }
+  .brand img{ height: 72px; max-width: 220px; }
 }
 .brand-text{
   font-family: var(--serif);
@@ -1516,6 +1520,4 @@ section{ padding: 120px 0; }
   .booking__field label{ font-size: .6rem; }
 
   /* Intro section */
-  .intro__grid{ grid-template-columns: 1fr; gap: 40px; }
-  .intro__media{ aspect-ratio: 4/5; max-width: 100%; }
-  .intro__media::before{ display:
+  .intro_
