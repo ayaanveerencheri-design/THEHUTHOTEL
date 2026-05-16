@@ -312,15 +312,15 @@ section{ padding: 120px 0; }
   align-items: center;
 }
 .brand img{
-  height: 80px;
+  height: 56px;
   width: auto;
   display: block;
-  max-width: 240px;
+  max-width: 180px;
   object-fit: contain;
   mix-blend-mode: multiply;
 }
 @media (max-width: 768px){
-  .brand img{ height: 56px; max-width: 180px; }
+  .brand img{ height: 42px; max-width: 140px; }
 }
 .brand-text{
   font-family: var(--serif);
@@ -380,6 +380,38 @@ section{ padding: 120px 0; }
   padding: 12px 22px;
   font-size: .72rem;
   letter-spacing: .22em;
+}
+
+/* Language toggle */
+.lang-toggle{
+  display: inline-flex;
+  gap: 2px;
+  font-size: .68rem;
+  letter-spacing: .15em;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-right: 8px;
+}
+.lang-toggle button{
+  background: transparent;
+  border: none;
+  color: var(--ink-soft);
+  padding: 8px 10px;
+  cursor: pointer;
+  font: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+  border-radius: var(--radius-sm);
+  transition: color .2s ease, background .2s ease;
+}
+.lang-toggle button:hover{ color: var(--ink); }
+.lang-toggle button.active{
+  color: var(--accent);
+  background: rgba(139,111,63,.08);
+}
+@media (max-width: 768px){
+  .lang-toggle{ font-size: .62rem; margin-right: 4px; }
+  .lang-toggle button{ padding: 6px 8px; }
 }
 
 /* Mobile menu toggle button (hamburger) */
@@ -515,15 +547,14 @@ section{ padding: 120px 0; }
 }
 .hero__dots{
   position: absolute;
-  bottom: 180px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 32px;
+  right: 32px;
   display: flex;
   gap: 10px;
   z-index: 6;
 }
 @media (max-width: 768px){
-  .hero__dots{ bottom: 130px; }
+  .hero__dots{ top: 20px; right: 16px; }
 }
 .hero__dot{
   width: 36px; height: 3px;
@@ -1488,26 +1519,4 @@ section{ padding: 120px 0; }
 
   /* Rooms grid */
   .rooms__grid{ grid-template-columns: 1fr; gap: 28px; }
-  .room-card__body{ padding: 24px 22px 28px; }
-  .room-card__meta{ flex-wrap: wrap; gap: 10px; font-size: .65rem; }
-  .room-card__foot{ flex-direction: column; align-items: flex-start; gap: 14px; }
-  .section-head{ margin: 0 auto 50px; }
-
-  /* Experiences grid */
-  .exp-tile, .exp-tile--lg, .exp-tile--sm, .exp-tile--row{
-    grid-column: span 12;
-    min-height: 280px;
-  }
-  .exp__grid{ gap: 16px; }
-
-  /* Why / Stats */
-  .why__grid{ grid-template-columns: 1fr; gap: 40px; }
-  .stats{ grid-template-columns: 1fr 1fr; margin-top: 50px; gap: 20px; }
-  .stat .num{ font-size: 2.4rem; }
-
-  /* Testimonials */
-  .testimonial-quote{ font-size: 1.15rem; }
-  .review-stats{ margin-top: 40px; padding: 12px 20px; }
-
-  /* CTA strip */
-  .c
+  .room-car

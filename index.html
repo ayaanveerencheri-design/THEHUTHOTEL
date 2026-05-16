@@ -12,6 +12,22 @@
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
 <meta name="theme-color" content="#8b6f3f">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Hut Boutique Hotel">
+<meta property="og:title" content="The Hut — Boutique Hotel & Rooftop Restaurant, Kigali">
+<meta property="og:description" content="A boutique hotel and rooftop restaurant in Kimihurura, Kigali — moments from the Kigali Convention Center.">
+<meta property="og:url" content="https://ayaanveerencheri-design.github.io/THEHUTHOTEL/index.html">
+<meta property="og:image" content="https://thehuthotelrwanda.com/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-03-at-09.39.47.jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Hut — Boutique Hotel & Rooftop Restaurant, Kigali">
+<meta name="twitter:description" content="A boutique hotel and rooftop restaurant in Kimihurura, Kigali — moments from the Kigali Convention Center.">
+<meta name="twitter:image" content="https://thehuthotelrwanda.com/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-03-at-09.39.47.jpeg">
+<link rel="canonical" href="https://ayaanveerencheri-design.github.io/THEHUTHOTEL/index.html">
 <link rel="stylesheet" href="styles.css">
 
 <!-- Schema.org Hotel JSON-LD for SEO -->
@@ -74,6 +90,7 @@
       <a href="rooms.html">Rooms</a>
       <a href="dining.html">Dining</a>
       <a href="experiences.html">Experiences</a>
+      <a href="blog.html">Journal</a>
       <a href="contact.html">Contact</a>
     <div class="nav__reserve"><a href="index.html#book" class="btn btn--gold">Reserve <span class="arrow">→</span></a></div></nav>
     <a href="#book" class="btn btn--gold book-cta">Reserve <span class="arrow">→</span></a>
@@ -224,32 +241,53 @@
   var dotsWrap = document.querySelector('.reviews__dots');
   if (!track) return;
   var cards = track.querySelectorAll('.review-card');
-  // build dots
-  cards.forEach(function(_, i){
-    var b = document.createElement('button');
-    b.className = 'reviews__dot' + (i === 0 ? ' active' : '');
-    b.setAttribute('aria-label', 'Go to review ' + (i+1));
-    b.addEventListener('click', function(){ scrollTo(i); });
-    dotsWrap.appendChild(b);
-  });
-  function cardWidth(){
-    if (!cards[0]) return 0;
-    var rect = cards[0].getBoundingClientRect();
-    return rect.width + 28; // include gap
+  if (!cards.length) return;
+
+  function cardStep(){
+    if (!cards[0] || !cards[1]) {
+      var c = cards[0].getBoundingClientRect();
+      return c.width + 28;
+    }
+    // measure actual distance between two cards
+    var a = cards[0].getBoundingClientRect();
+    var b = cards[1].getBoundingClientRect();
+    return b.left - a.left;
   }
-  function scrollTo(i){
-    track.scrollTo({ left: i * cardWidth(), behavior: 'smooth' });
+  function goToIndex(i){
+    var step = cardStep();
+    track.scrollTo({ left: i * step, behavior: 'smooth' });
   }
-  if (prev) prev.addEventListener('click', function(){
-    track.scrollBy({ left: -cardWidth(), behavior: 'smooth' });
-  });
-  if (next) next.addEventListener('click', function(){
-    track.scrollBy({ left: cardWidth(), behavior: 'smooth' });
-  });
-  // active dot tracking
+
+  // Build dots
+  if (dotsWrap){
+    cards.forEach(function(_, i){
+      var b = document.createElement('button');
+      b.className = 'reviews__dot' + (i === 0 ? ' active' : '');
+      b.setAttribute('aria-label', 'Go to review ' + (i+1));
+      b.addEventListener('click', function(){ goToIndex(i); });
+      dotsWrap.appendChild(b);
+    });
+  }
+
+  // Arrow buttons
+  if (prev){
+    prev.addEventListener('click', function(e){
+      e.preventDefault();
+      track.scrollBy({ left: -cardStep(), behavior: 'smooth' });
+    });
+  }
+  if (next){
+    next.addEventListener('click', function(e){
+      e.preventDefault();
+      track.scrollBy({ left: cardStep(), behavior: 'smooth' });
+    });
+  }
+
+  // Active dot tracking
   track.addEventListener('scroll', function(){
-    var idx = Math.round(track.scrollLeft / cardWidth());
-    dotsWrap.querySelectorAll('.reviews__dot').forEach(function(d,i){
+    if (!dotsWrap) return;
+    var idx = Math.round(track.scrollLeft / cardStep());
+    dotsWrap.querySelectorAll('.reviews__dot').forEach(function(d, i){
       d.classList.toggle('active', i === idx);
     });
   }, { passive: true });
@@ -281,27 +319,27 @@
 </script>
 
 <!-- Booking widget -->
-<form id="book" class="booking" onsubmit="event.preventDefault(); var b=this.querySelector('button[type=submit]'); b.setAttribute('aria-busy','true'); b.innerHTML='Checking…'; setTimeout(function(){alert('Redirecting to reservation portal…'); b.removeAttribute('aria-busy'); b.innerHTML='Check availability <span class=\'arrow\'>→</span>';}, 900);">
+<form id="book" class="booking" onsubmit="event.preventDefault(); var b=this.querySelector('button[type=submit]'); b.setAttribute('aria-busy','true'); b.innerHTML='Checking…'; var ci=this.querySelector('input[name=checkin]').value; var co=this.querySelector('input[name=checkout]').value; var g=this.querySelector('select[name=guests]').value; setTimeout(function(){ window.location.href='https://www.swiftbook.io/inst/#/reseve?propertyId=462MjmHQAS0m2vIuuPSQo48IfoODYyNDk=&JDRN=Y&RoomID=169233,169234,169235&noofrooms=1&adult0=' + encodeURIComponent(g) + '&checkin=' + encodeURIComponent(ci) + '&checkout=' + encodeURIComponent(co); }, 600);">
   <div class="booking__field">
-    <label>Check in</label>
-    <input type="date" value="2026-05-15">
+    <label for="book-checkin">Check in</label>
+    <input id="book-checkin" name="checkin" type="date" value="2026-05-15">
   </div>
   <div class="booking__field">
-    <label>Check out</label>
-    <input type="date" value="2026-05-18">
+    <label for="book-checkout">Check out</label>
+    <input id="book-checkout" name="checkout" type="date" value="2026-05-18">
   </div>
   <div class="booking__field">
-    <label>Guests</label>
-    <select>
-      <option>2 Adults</option>
-      <option>1 Adult</option>
-      <option>2 Adults, 1 Child</option>
-      <option>2 Adults, 2 Children</option>
+    <label for="book-guests">Guests</label>
+    <select id="book-guests" name="guests">
+      <option value="2">2 Adults</option>
+      <option value="1">1 Adult</option>
+      <option value="3">2 Adults, 1 Child</option>
+      <option value="4">2 Adults, 2 Children</option>
     </select>
   </div>
   <div class="booking__field">
-    <label>Room</label>
-    <select>
+    <label for="book-room">Room</label>
+    <select id="book-room" name="room">
       <option>Any room</option>
       <option>Junior Suite</option>
       <option>Premier Room</option>
@@ -464,7 +502,7 @@
           <li><span class="num">04</span><div><strong>Built for business and leisure alike</strong><span>Fibre internet, conference space, and a pool to unwind in.</span></div></li>
         </ul>
       </div>
-      <div class="why__media" style="background-image:url('images/premier-04.jpg'); background-position: center center;"></div>
+      <div class="why__media" style="background-image:url('images/premier-04.jpg'), url('https://thehuthotelrwanda.com/wp-content/uploads/2026/04/Untitled-design-25.png'); background-position: center center; background-size: cover;"></div>
     </div>
 
     <div class="stats">
@@ -557,24 +595,4 @@
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-strip">
-  <div class="container">
-    <span class="eyebrow" style="color:var(--gold);">Ready when you are</span>
-    <h2>Your room is waiting.</h2>
-    <p>Reserve directly with us for our best available rate, complimentary breakfast, and the small extras only we can offer.</p>
-    <a href="#book" class="btn btn--gold">Reserve your stay <span class="arrow">→</span></a>
-  </div>
-</section>
-</main>
-
-<a href="#book" class="floating-book" aria-label="Book your stay">Book now</a>
-
-<!-- Footer -->
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer__grid">
-      <div>
-        <div class="footer__brand">The Hut</div>
-        <p>A boutique hotel in the land of a thousand hills — set in a quiet, serene neighbourhood that offers a relaxing escape from the city's pace.</p>
-        <div class="socials"><a href="https://www.instagram.com/thehuthotelrwanda" target="_blank" rel="noopener" aria-label="The Hut on Instagram"><svg width="16" height="16" viewBox="0 
+<!--
