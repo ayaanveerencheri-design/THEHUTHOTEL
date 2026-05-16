@@ -40,8 +40,8 @@
   --shadow-lg: 0 24px 64px rgba(26,26,26,0.18);
 
   /* Typography */
-  --serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
-  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --serif: "Fraunces", "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --sans: "DM Sans", "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 
   /* Layout */
   --container: 1280px;
@@ -168,20 +168,29 @@ html{ scroll-behavior: smooth; overflow-x: hidden; scroll-padding-top: 120px; }
 body{
   margin: 0;
   font-family: var(--sans);
-  font-size: 20px;
-  line-height: 1.8;
+  font-size: 18px;
+  line-height: 1.65;
   color: #1f1f1d;
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
   width: 100%;
+  font-weight: 400;
 }
-p{ color: #2a2a28; font-size: 1.05rem; line-height: 1.75; }
-.lead, p.lead{ color: #0f0f0f; font-size: 1.25rem; line-height: 1.65; }
+p{ color: #2a2a28; font-size: 1rem; line-height: 1.7; }
+.lead, p.lead{
+  color: #0f0f0f;
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  line-height: 1.45;
+  font-weight: 300;
+  letter-spacing: -0.005em;
+  font-variation-settings: "opsz" 60;
+}
 @media (max-width: 768px){
-  body{ font-size: 18px; line-height: 1.7; }
-  p{ font-size: 1rem; }
-  .lead, p.lead{ font-size: 1.15rem; }
+  body{ font-size: 17px; line-height: 1.65; }
+  p{ font-size: .98rem; }
+  .lead, p.lead{ font-size: 1.2rem; }
 }
 
 img{ max-width: 100%; display: block; }
@@ -192,14 +201,15 @@ a:hover{ color: var(--accent); }
 h1,h2,h3,h4{
   font-family: var(--serif);
   font-weight: 400;
-  letter-spacing: -0.01em;
-  line-height: 1.15;
+  letter-spacing: -0.015em;
+  line-height: 1.12;
   margin: 0 0 .6em;
+  font-variation-settings: "opsz" 144;
 }
-h1{ font-size: clamp(2rem, 3.4vw, 3.2rem); }
-h2{ font-size: clamp(1.7rem, 2.6vw, 2.4rem); }
-h3{ font-size: clamp(1.25rem, 1.8vw, 1.55rem); }
-h4{ font-size: 1.05rem; letter-spacing: .02em; }
+h1{ font-size: clamp(2.4rem, 4.2vw, 3.8rem); font-weight: 300; font-variation-settings: "opsz" 144; }
+h2{ font-size: clamp(1.9rem, 3vw, 2.8rem); font-weight: 400; }
+h3{ font-size: clamp(1.35rem, 2vw, 1.7rem); font-weight: 500; font-variation-settings: "opsz" 24; }
+h4{ font-size: 1.05rem; letter-spacing: .02em; font-weight: 500; }
 
 p{ margin: 0 0 1em; color: var(--ink-soft); }
 
@@ -312,15 +322,14 @@ section{ padding: 120px 0; }
   align-items: center;
 }
 .brand img{
-  height: 56px;
+  height: 70px;
   width: auto;
   display: block;
-  max-width: 180px;
+  max-width: 220px;
   object-fit: contain;
-  mix-blend-mode: multiply;
 }
 @media (max-width: 768px){
-  .brand img{ height: 42px; max-width: 140px; }
+  .brand img{ height: 52px; max-width: 170px; }
 }
 .brand-text{
   font-family: var(--serif);
@@ -1509,14 +1518,4 @@ section{ padding: 120px 0; }
   /* Intro section */
   .intro__grid{ grid-template-columns: 1fr; gap: 40px; }
   .intro__media{ aspect-ratio: 4/5; max-width: 100%; }
-  .intro__media::before{ display: none; }
-  .intro__quote{ font-size: 1.1rem; padding: 18px 0 10px; }
-
-  /* Headings */
-  h1{ font-size: clamp(2rem, 8vw, 2.8rem); }
-  h2{ font-size: clamp(1.7rem, 6vw, 2.4rem); }
-  h3{ font-size: clamp(1.25rem, 4.5vw, 1.6rem); }
-
-  /* Rooms grid */
-  .rooms__grid{ grid-template-columns: 1fr; gap: 28px; }
-  .room-car
+  .intro__media::before{ display:
