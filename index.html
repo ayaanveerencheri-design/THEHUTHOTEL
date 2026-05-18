@@ -7,7 +7,7 @@
 <meta name="description" content="A boutique hotel & rooftop restaurant in Kimihurura, Kigali — moments from the Kigali Convention Center. Crafted rooms, panoramic views, and Rwandan hospitality.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="https://thehuthotelrwanda.com/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-03-at-09.39.47.jpeg" fetchpriority="high">
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
@@ -319,7 +319,7 @@
 </script>
 
 <!-- Booking widget -->
-<form id="book" class="booking" onsubmit="event.preventDefault(); var b=this.querySelector('button[type=submit]'); b.setAttribute('aria-busy','true'); b.innerHTML='Checking…'; var ci=this.querySelector('input[name=checkin]').value; var co=this.querySelector('input[name=checkout]').value; var g=this.querySelector('select[name=guests]').value; setTimeout(function(){ window.location.href='https://www.swiftbook.io/inst/#/reseve?propertyId=462MjmHQAS0m2vIuuPSQo48IfoODYyNDk=&JDRN=Y&RoomID=169233,169234,169235&noofrooms=1&adult0=' + encodeURIComponent(g) + '&checkin=' + encodeURIComponent(ci) + '&checkout=' + encodeURIComponent(co); }, 600);">
+<form id="book" class="booking" onsubmit="event.preventDefault(); var b=this.querySelector('button[type=submit]'); b.setAttribute('aria-busy','true'); b.innerHTML='Opening WhatsApp…'; var ci=this.querySelector('input[name=checkin]').value; var co=this.querySelector('input[name=checkout]').value; var g=this.querySelector('select[name=guests]').selectedOptions[0].textContent; var r=this.querySelector('select[name=room]').value; var msg='Hello, I would like to check availability at The Hut.%0A%0ACheck-in: '+ci+'%0ACheck-out: '+co+'%0AGuests: '+g+'%0ARoom: '+r+'%0A%0AThank you.'; setTimeout(function(){ window.open('https://wa.me/250792409006?text='+msg, '_blank'); b.removeAttribute('aria-busy'); b.innerHTML='Check availability <span class=&quot;arrow&quot;>→</span>'; }, 400);">
   <div class="booking__field">
     <label for="book-checkin">Check in</label>
     <input id="book-checkin" name="checkin" type="date" value="2026-05-15">
@@ -606,7 +606,17 @@
 </section>
 </main>
 
-<a href="#book" class="floating-book" aria-label="Book your stay">Book now</a>
+<nav class="floating-bar" aria-label="Quick contact">
+  <a href="tel:+250792409006" aria-label="Call The Hut">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call
+  </a>
+  <a href="https://wa.me/250792409006" target="_blank" rel="noopener" aria-label="Message The Hut on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.31A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.76 12.1L4 21l5-1.31a7.93 7.93 0 0 0 3.07.78h0a7.94 7.94 0 0 0 6.74-12.16zm-5.53 12.2h0a6.6 6.6 0 0 1-3.36-.92l-.24-.14-2.5.65.67-2.43-.16-.25a6.6 6.6 0 0 1 5.6-10.1 6.55 6.55 0 0 1 4.67 1.94 6.55 6.55 0 0 1 1.93 4.67 6.61 6.61 0 0 1-6.61 6.58zm3.62-4.93c-.2-.1-1.18-.58-1.36-.65s-.32-.1-.45.1-.51.65-.63.79-.23.15-.43.05a5.42 5.42 0 0 1-1.6-1 6 6 0 0 1-1.11-1.38c-.12-.2 0-.31.09-.41s.2-.23.3-.35a1.32 1.32 0 0 0 .2-.33.36.36 0 0 0 0-.35c-.05-.1-.45-1.09-.62-1.49s-.33-.34-.45-.34h-.39a.74.74 0 0 0-.54.25 2.27 2.27 0 0 0-.7 1.69 3.93 3.93 0 0 0 .83 2.1 9 9 0 0 0 3.47 3.07c.49.2.87.32 1.17.41a2.83 2.83 0 0 0 1.29.08 2.13 2.13 0 0 0 1.38-1 1.71 1.71 0 0 0 .12-1c-.04-.1-.18-.16-.38-.25z"/></svg>
+    WhatsApp
+  </a>
+  <a href="index.html#book" aria-label="Book your stay">Book</a>
+</nav>
 
 <!-- Footer -->
 <footer class="site-footer">
@@ -621,9 +631,4 @@
       <div><h4>Stay</h4><ul><li><a href="room-junior-suite.html">Junior Suite</a></li><li><a href="room-premier.html">Premier Room</a></li><li><a href="room-standard.html">Standard Room</a></li><li><a href="#book">Book direct</a></li></ul></div>
       <div><h4>Visit</h4><ul><li>KG 646 St, Rugando, Kimihurura</li><li>(behind Kigali Convention Center)</li><li>Kigali, Rwanda</li><li style="margin-top:14px;"><a href="tel:+250792409006">+250 792 409 006</a></li><li><a href="mailto:reservation@thehuthotelrwanda.com">reservation@thehuthotelrwanda.com</a></li></ul></div>
     </div>
-    <div class="footer__bottom"><div>© 2026 The Hut Boutique Hotel · Kigali</div><div><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></div></div>
-  </div>
-</footer>
-
-</body>
-</html>
+    <div class="footer__bottom"><div>© 2026 The Hut Boutique H
